@@ -1,0 +1,33 @@
+{
+  "name": "genapp",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Application Generator",
+  "main": "./lib/genco.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "test": "simpleunit -r ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajlopez/GenApp.git"
+  },
+  "keywords": [
+    "code",
+    "generation"
+  ],
+  "author": "ajlopez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajlopez/GenApp/issues"
+  },
+  "homepage": "https://github.com/ajlopez/GenApp#readme",
+  "devDependencies": {
+    "simpleunit": "0.0.8"
+  },
+  "dependencies": {
+    "genco": "0.0.1"
+  }
+}
