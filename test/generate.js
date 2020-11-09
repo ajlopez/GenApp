@@ -29,3 +29,21 @@ exports['generate title'] = function (test) {
     test.equal(result, '<h1>Hello, world</h1>');
 };
 
+exports['generate text and title'] = function (test) {
+    const model = [
+        {
+            type: 'title',
+            text: 'Home'
+        },
+        {
+            type: 'text',
+            text: 'Hello, world'
+        }
+    ]
+    
+    const result = generate(model, templatesFolder).trim();
+    
+    test.ok(result);
+    test.equal(result, '<h1>Home</h1>\r\n<p>\r\nHello, world\r\n</p>');
+};
+
