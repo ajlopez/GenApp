@@ -47,3 +47,31 @@ exports['generate text and title'] = function (test) {
     test.equal(result, '<h1>Home</h1>\r\n<p>\r\nHello, world\r\n</p>');
 };
 
+exports['generate application with items'] = function (test) {
+    const model = 
+    {
+        type: 'application',
+        name: 'DAppZero',
+        items: [
+            {
+                type: 'title',
+                text: 'Home'
+            },
+            {
+                type: 'text',
+                text: 'Hello, world'
+            }
+        ]
+    }
+    const result = generate(model, templatesFolder).trim();
+    
+    test.ok(result);
+
+    test.ok(result.indexOf('<html>\r\n' >= 0));
+    test.ok(result.indexOf('<head>\r\n' >= 0));
+    test.ok(result.indexOf('<title>DAppZero</title>\r\n' >= 0));
+    test.ok(result.indexOf('<body>\r\n' >= 0));
+    test.ok(result.indexOf('<h1>Home</h1>\r\n<p>\r\nHello, world\r\n</p>' >= 0));
+    test.ok(result.indexOf('</body>' >= 0));
+};
+
